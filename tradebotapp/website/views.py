@@ -7,6 +7,6 @@ from .models import Trade, Position, Portfolio
 
 # Create your views here.
 def home(request):
-	trades = []#Trade.objects.all()
-	return render(request, 'templates/home.html', {'trades': trades})
+	trades = Trade.objects.all()
+	return render(request, 'home.html', {'trades': trades})
 	#print('Hello World!')

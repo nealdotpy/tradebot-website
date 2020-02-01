@@ -1,11 +1,20 @@
 {% extends 'base.html' %}
 
 {% block breadcrumb %}
-  <li class="breadcrumb-item active">Boards</li>
+  <li class="breadcrumb-item active">TRADES</li>
 {% endblock %}
 
 {% block content %}
-  Hello, World!
+  <tbody>
+      {% for trade in trades %}
+        <tr>
+          <td>
+            <small class="text-muted d-block">{{ trade }}</small> 
+          </td>
+          <td></td>
+        </tr>
+      {% endfor %}
+    </tbody>
   <!-- <table class="table">
     <thead class="thead-inverse">
       <tr>

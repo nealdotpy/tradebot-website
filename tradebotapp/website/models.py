@@ -8,6 +8,9 @@ class Position(models.Model):
 	qty = models.IntegerField()
 	price = models.FloatField()
 
+	# def __str__(self):
+	# 	return '{} share(s) of ${} for ${}'.format(self.qty, self.symbol, self.price)
+
 class Portfolio(models.Model):
 	date = models.DateTimeField()
 	equity = models.FloatField()
@@ -39,5 +42,8 @@ class Trade(models.Model):
 	side = models.CharField(max_length=4, choices=TradeSide.choices)
 	time_in_force = models.CharField(max_length=4, choices=TimeInForce.choices)
 	position = models.ForeignKey(Position, on_delete=models.DO_NOTHING)
+
+	def __str__(self):
+		return '{} : {} shares of ${} for ${}'.format(self.side, self.position.qty, self.position.symbol, self.position.price)
 
 
