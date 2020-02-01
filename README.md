@@ -5,3 +5,8 @@ This application will be live on https://tradebot.app/ and will house a demo for
 Key Features:
 
 * Fill this in later.
+
+
+# Schema
+
+![Schema](img/schema.PNG)
