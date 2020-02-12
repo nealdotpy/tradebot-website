@@ -1,4 +1,5 @@
 venv-django/
 db*
 tradebotapp/tradebotapp/settings.py
-tradebotapp/tradebotapp/__*
+tradebotapp/tradebotapp/__p*
+tradebotapp/website/__p*
