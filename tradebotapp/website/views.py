@@ -10,3 +10,10 @@ def home(request):
 	trades = Trade.objects.all()
 	return render(request, 'home.html', {'trades': trades})
 	#print('Hello World!')
+
+def source(request):
+	return render(request, 'source.html')
+
+
+def dashboard(request):
+	return render(request, 'dashboard.html')
