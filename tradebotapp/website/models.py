@@ -44,6 +44,7 @@ class Trade(models.Model):
 	position = models.ForeignKey(Position, on_delete=models.DO_NOTHING)
 
 	def __str__(self):
-		return '{} : {} shares of ${} for ${}'.format(self.side, self.position.qty, self.position.symbol, self.position.price)
+		return '[{}] {} : {} share(s) of ${} for ${}'.format(
+			str(self.date_executed)[:19]+' UTC', self.side, self.position.qty, self.position.symbol, self.position.price)
 
 
