@@ -19,6 +19,7 @@ def dashboard(request):
 	return render(request, 'dashboard.html')
 
 def search_ticker(request):
+	
 	if request.method == 'GET':
 		ticker = request.GET.get('ticker')
 		print('*!*!*!*!*!*!*\nYou requested information for: {}\n*!*!*!*!*!*!*'.format(ticker))
