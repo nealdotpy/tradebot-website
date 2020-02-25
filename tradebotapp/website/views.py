@@ -19,13 +19,16 @@ def dashboard(request):
 	return render(request, 'dashboard.html')
 
 def search_ticker(request):
-	ticker = request.GET.get('ticker')
 	if request.method == 'GET':
+		ticker = request.GET.get('ticker')
 		print('*!*!*!*!*!*!*\nYou requested information for: {}\n*!*!*!*!*!*!*'.format(ticker))
 
-	position_matching_ticker = Position.objects.all().filter(symbol=ticker)
-	trades_matching_ticker = position_matching_ticker#Trade.objects.all().filter(position=())
+		positions_matching_ticker = Position.objects.all().filter(symbol=ticker.upper())
+		trades_matching_ticker = []
 
-	print('{}'.format(trades_matching_ticker))
+		for position in positions_matching_ticker:
+			trades_matching_ticker.append(str(Trade.objects.all().filter(position=position)))
+
+		#print('{}'.format(trades_matching_ticker))
 
 	return render(request, 'home.html', {'trades': trades_matching_ticker})
