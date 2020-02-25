@@ -12,7 +12,7 @@ def home(request):
 	#print('Hello World!')
 
 def source(request):
-	return render(request, 'source.html')
+	return redirect('https://github.com/nealdotpy/tradebot-website') # less clicks the better :)
 
 
 def dashboard(request):
