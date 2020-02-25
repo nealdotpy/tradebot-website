@@ -8,8 +8,8 @@ class Position(models.Model):
 	qty = models.IntegerField()
 	price = models.FloatField()
 
-	# def __str__(self):
-	# 	return '{} share(s) of ${} for ${}'.format(self.qty, self.symbol, self.price)
+	def __str__(self):
+		return '{} share(s) of ${} for ${}'.format(self.qty, self.symbol, self.price)
 
 class Portfolio(models.Model):
 	date = models.DateTimeField()
